@@ -1,3 +1,93 @@
+For sure. I have this snippet at the top of my codex.md/claude.md
+
+# PROJECT WORKSPACE REQUIREMENT - MANDATORY FOR ALL DEVELOPMENT
+
+## 🚨 CRITICAL: Every Development Session MUST Use a Project
+
+*ABSOLUTE RULE*: You MUST create a project for EVERY piece of work, no exceptions. This includes:
+- Bug fixes (no matter how small)
+- Feature development
+- Refactoring
+- Experiments
+- Documentation updates
+- Analysis or investigation tasks
+- One-off scripts
+- ANY development work whatsoever
+
+### Creating a New Project
+
+*ALWAYS start your work session by creating a project:*
+
+bash
+./setup-project <project-name>
+
+
+Example project names:
+- fix-login-bug
+- add-user-authentication
+- refactor-email-service
+- investigate-performance-issue
+- update-api-docs
+
+### Project Structure (AUTO-GENERATED)
+
+Every project will have:
+- README.md - Project overview and quick links
+- USER_STORY.md - User stories and acceptance criteria
+- REQUIREMENTS.md - Functional and technical requirements
+- DESIGN.md - Technical design and architecture decisions
+- VALIDATION_STRATEGY.md - How to validate success
+- STATUS_UPDATES.md - Chronological progress updates (append-only)
+- PROGRESS_TRACKER.md - Task checklist and milestones
+- RETROSPECTIVE.md - Lessons learned (filled when complete)
+- scripts/ - Project-specific scripts
+- docs/ - Additional documentation
+- tests/ - Proof-of-concept or experimental tests
+- spikes/ - Technical experiments
+
+### Workflow Rules
+
+1. *NO SCATTERED FILES*: Never create files in the root directory or outside of a project
+2. *NO UNNAMED WORK*: Every task must belong to a named project
+3. *STAY ORGANIZED*: All work happens in projects/active/<your-project>/
+4. *UPDATE STATUS*: Add entries to STATUS_UPDATES.md as you progress
+5. *TRACK PROGRESS*: Check off tasks in PROGRESS_TRACKER.md
+6. *COMPLETE PROPERLY*: When done, fill RETROSPECTIVE.md and move to projects/archive/
+
+### Example Session Start
+
+bash
+# WRONG - Never do this:
+cd backend
+vim fix_bug.py  # NO! Don't create random files
+
+# RIGHT - Always do this:
+./setup-project fix-user-login-bug
+cd projects/active/fix-user-login-bug
+# Now create your scripts/fixes in the project directory
+vim scripts/fix_login.py
+
+
+### Finding Projects
+
+bash
+# List all active projects
+ls projects/active/
+
+# Find a specific project
+find projects -name "*login*" -type d
+
+
+### Completing a Project
+
+1. Fill out RETROSPECTIVE.md
+2. Ensure all documentation is complete
+3. Move to archive: mv projects/active/my-project projects/archive/
+
+*REMEMBER*: If you're not working in a project folder, you're doing it wrong!
+
+---
+
 # AGENTS.md — Substack2Markdown Web App (Project Memory)
 
 ## Mission
