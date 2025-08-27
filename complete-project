@@ -1,0 +1,32 @@
+
+```bash
+#!/usr/bin/env bash
+# complete-project - mark a project finished and archive it
+
+set -euo pipefail
+
+PROJECT_NAME="${1:-}"
+if [[ -z "$PROJECT_NAME" ]]; then
+  echo "Usage: ./complete-project <project-name>"
+  exit 1
+fi
+
+ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
+SRC="$ROOT/projects/active/$PROJECT_NAME"
+if [[ ! -d "$SRC" ]]; then
+  echo "❌ No such project: $SRC"
+  exit 1
+fi
+
+# Check PROGRESS_TRACKER.md for unchecked boxes
+if grep -q "\[ \]" "$SRC/PROGRESS_TRACKER.md"; then
+  echo "❌ Unfinished tasks remain in PROGRESS_TRACKER.md"
+  exit 1
+fi
+
+STAMP="$(date +%Y%m%d)"
+DEST="$ROOT/projects/archive/${STAMP}-$PROJECT_NAME"
+mkdir -p "$ROOT/projects/archive"
+mv "$SRC" "$DEST"
+
+echo "✅ Project '$PROJECT_NAME' archived to $DEST"

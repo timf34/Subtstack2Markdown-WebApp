@@ -18,8 +18,9 @@ For sure. I have this snippet at the top of my codex.md/claude.md
 
 *ALWAYS start your work session by creating a project:*
 
-bash
+```bash
 ./setup-project <project-name>
+```
 
 
 Example project names:
