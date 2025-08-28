@@ -13,6 +13,7 @@ venv/
 # Ignore all files in data/ except README.md
 data/
 !data/README.md
+!tests/data/
 
 # Ignore all files in substack_html_pages/ except README.md
 substack_html_pages/*
@@ -20,3 +21,11 @@ substack_html_pages/*
 
 # Ignore substack_md_files directory
 /substack_md_files/
+
+# Build artifacts
+dist/
+
+# Frontend
+web/node_modules/
+web/.next/
+web/out/

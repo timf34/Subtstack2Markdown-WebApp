@@ -1,0 +1,4 @@
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Sample Author</title>
+<item><title>First Post</title><description>Hello World</description><pubDate>2025</pubDate><content:encoded><![CDATA[<p>Hello</p>]]></content:encoded></item>
+<item><title>Second Post</title><description>More</description><pubDate>2025</pubDate><content:encoded><![CDATA[<p>More</p>]]></content:encoded></item>
+</channel></rss>

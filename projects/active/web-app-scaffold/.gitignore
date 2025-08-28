@@ -1,0 +1,20 @@
+# Project-specific ignores
+*.tmp
+*.log
+.DS_Store
+__pycache__/
+*.pyc
+node_modules/
+.env
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# Test outputs
+test-results/
+coverage/
+
+# Generated files
+*.generated.*
